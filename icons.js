@@ -25,6 +25,7 @@ const ICON_PATHS = {
   next:'<path d="M5 5l9 7-9 7z" fill="currentColor"/><path d="M18 5v14"/>',
   prev:'<path d="M19 5l-9 7 9 7z" fill="currentColor"/><path d="M6 5v14"/>',
   check:'<path d="M5 12.500l4.500 4.500L19 7.500"/>',
+  flame:'<path d="M12 21.500c-3.900 0-6.500-2.600-6.500-6.200 0-2.600 1.500-4.400 3-6 .4 1.300 1.100 2.200 2.100 2.700C10.400 8.200 11 5.200 12.800 2.500c.6 2.900 2.100 4.500 3.500 6.200 1.300 1.500 2.200 3.300 2.200 5.700 0 3.600-2.600 7.100-6.500 7.100z"/><path d="M12 20.300c-1.400 0-2.300-1-2.300-2.300 0-1.300 1.100-1.900 2.300-3.300 1.200 1.400 2.300 2 2.300 3.300 0 1.300-.9 2.300-2.300 2.300z"/>',
   star:'<path d="M12 3.500l2.600 5.400 5.900.8-4.300 4.100 1 5.800L12 16.800 6.800 19.600l1-5.800L3.500 9.700l5.900-.8z"/>'
 };
 function icon(name, cls=''){ return `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON_PATHS[name]||''}</svg>`; }

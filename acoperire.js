@@ -81,7 +81,7 @@ const EXTRAS=[
  'Faptul că perechile A=T se desfac înaintea celor C≡G la încălzire (lecția 7)',
  'Etapele G1 și G2 ale interfazei (lecția 8)',
  '„Mica fabrică de proteine”: traducerea cu ribozom și ARNt (lecția 10)',
- 'Jocurile, quiz-ul, flashcard-urile și foaia rezumat'
+ 'Jocurile, quiz-ul, testele grele pe capitole (cu harta capitolelor stăpânite), flashcard-urile și foaia rezumat'
 ];
 VIEWS.acoperire={
   title:'Acoperire',

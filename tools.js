@@ -29,7 +29,7 @@ VIEWS.home = {
       <div class="card"><h3>1 · Joacă-te cu simulările</h3><p>În fiecare lecție ai animații și jocuri. Nu citi doar — <b>apasă, trage, ghicește</b>. Creierul ține minte ce face.</p></div>
       <div class="card"><h3>2 · Verifică-te la final de lecție</h3><p>Mini-testul din final îți arată imediat ce n-ai înțeles. Citește explicațiile!</p></div>
       <div class="card"><h3>3 · Flashcards + Potrivește</h3><p>10 minute pe zi, repetat, bat 2 ore de recitit o dată.</p></div>
-      <div class="card"><h3>4 · Quiz până la 90%+</h3><p>„Greșelile mele” îți dă doar întrebările la care ai greșit. În seara dinaintea testului: <b>Foaia rezumat</b>.</p></div>
+      <div class="card"><h3>4 · Quiz până la 90%+, apoi Teste grele</h3><p>„Greșelile mele” îți dă doar întrebările la care ai greșit. Când ai 90%+, încearcă <b>Testele grele</b>: dacă le rezolvi, testul adevărat ți se va părea ușor. În seara dinainte: <b>Foaia rezumat</b>.</p></div>
     </div>
 
     <h2>Exersează</h2>
@@ -39,7 +39,8 @@ VIEWS.home = {
       <a class="tile" href="#/quiz"><div class="ti">${icon('quiz')}</div><b>Quiz</b><span class="small muted">${QUESTIONS.length} întrebări, cu explicații</span></a>
       <a class="tile" href="#/foaie"><div class="ti">${icon('sheet')}</div><b>Foaia rezumat</b><span class="small muted">tot esențialul pe o pagină</span></a>
     </div>
-    <a class="tile" href="#/acoperire" style="margin-top:14px;display:flex;gap:14px;align-items:center"><div class="ti" style="margin:0">${icon('book')}</div><div><b>Acoperire: tot ce trebuie să știi</b><span class="small muted">Lista completă a punctelor din materie, fiecare legat de lecția unde îl găsești.</span></div></a>a>`;
+    <a class="tile" href="#/teste" style="margin-top:14px;display:flex;gap:14px;align-items:center;border-color:color-mix(in srgb,#ef4444 45%,var(--line))"><div class="ti" style="margin:0;background:color-mix(in srgb,#ef4444 16%,transparent);color:#ef4444">${icon('flame')}</div><div><b>Teste grele pe capitole</b><span class="small muted">${HARD.length} întrebări foarte grele, fără calcule — și o hartă care arată ce capitole stăpânești concret.</span></div></a>
+    <a class="tile" href="#/acoperire" style="margin-top:14px;display:flex;gap:14px;align-items:center"><div class="ti" style="margin:0">${icon('book')}</div><div><b>Acoperire: tot ce trebuie să știi</b><span class="small muted">Lista completă a punctelor din materie, fiecare legat de lecția unde îl găsești.</span></div></a>`;
   },
   init(root){ const c=$('#heroHelix',root); if(c) createHelix(c,{pairs:22,interactive:false,letters:false,speed:.5,tilt:.18,margin:1.5}); }
 };
@@ -108,7 +109,9 @@ VIEWS.match = {
 /* ---------- QUIZ ---------- */
 VIEWS.quiz = {
   title:'Quiz',
-  html:()=>`<header class="lesson-hero" style="--ac1:#f59e0b;--ac2:#ef4444"><div class="lh-top"><div class="lh-ico">${icon('quiz')}</div><div><h1>Quiz</h1><p>${QUESTIONS.length} întrebări cu explicații. Fiecare răspuns corect = +10 XP.</p></div></div></header><div id="qzBox" style="margin-top:14px"></div>`,
+  html:()=>`<header class="lesson-hero" style="--ac1:#f59e0b;--ac2:#ef4444"><div class="lh-top"><div class="lh-ico">${icon('quiz')}</div><div><h1>Quiz</h1><p>${QUESTIONS.length} întrebări cu explicații. Fiecare răspuns corect = +10 XP.</p></div></div></header>
+    <a class="tile" href="#/teste" style="margin-top:14px;display:flex;gap:14px;align-items:center;border-color:color-mix(in srgb,#ef4444 45%,var(--line))"><div class="ti" style="margin:0;background:color-mix(in srgb,#ef4444 16%,transparent);color:#ef4444">${icon('flame')}</div><div><b>Vrei întrebări mult mai grele, pe fiecare capitol?</b><span class="small muted">Teste grele: ${HARD.length} de întrebări cu capcane (fără calcule) și o hartă a capitolelor stăpânite →</span></div></a>
+    <div id="qzBox" style="margin-top:14px"></div>`,
   init(root){
     const box=$('#qzBox',root);
     function menu(){
@@ -116,10 +119,11 @@ VIEWS.quiz = {
       box.innerHTML=`<div class="grid2">
         <div class="card" style="margin:0"><h3>⚡ Rapid</h3><p class="small muted">10 întrebări amestecate.</p><button class="btn" data-m="quick">Start</button></div>
         <div class="card" style="margin:0"><h3>🏁 Test complet</h3><p class="small muted">Toate cele ${QUESTIONS.length}, amestecate. Simulezi testul!</p><button class="btn" data-m="all">Start</button></div>
-        <div class="card" style="margin:0"><h3>📚 Pe temă</h3><select id="qTopic" class="chip" style="padding:9px;margin-bottom:8px;width:100%">${Object.entries(TOPICS).map(([k,v])=>`<option value="${k}">${v} (${QUESTIONS.filter(q=>q.topic===k).length})</option>`).join('')}</select><button class="btn" data-m="topic">Start</button></div>
+        <div class="card" style="margin:0"><h3>📚 Pe temă</h3><select id="qTopic" class="chip" style="padding:9px;margin-bottom:8px;width:100%">${Object.entries(TOPICS).map(([k,v])=>`<option value="${k}">${v} (${QUESTIONS.filter(q=>q.topic===k).length} · 🔥 ${HARD.filter(q=>q.topic===k).length} grele)</option>`).join('')}</select><div class="row"><button class="btn" data-m="topic">Start</button><button class="btn ghost" data-m="hard" title="Testul greu al aceluiași capitol">🔥 Varianta grea</button></div></div>
         <div class="card" style="margin:0"><h3>🔁 Greșelile mele</h3><p class="small muted">${wrong.length?`Ai ${wrong.length} întrebări de refăcut.`:'Nicio greșeală încă 🎉'}</p><button class="btn" data-m="wrong" ${wrong.length?'':'disabled'}>Start</button></div></div>`;
       $$('[data-m]',box).forEach(b=>b.onclick=()=>{
         const m=b.dataset.m; let list;
+        if(m==='hard'){ store.set('hardGo',$('#qTopic',box).value); location.hash='#/teste'; return; }
         if(m==='quick') list=shuffle(QUESTIONS).slice(0,10);
         if(m==='all') list=shuffle(QUESTIONS);
         if(m==='topic') list=shuffle(QUESTIONS.filter(q=>q.topic===$('#qTopic',box).value));

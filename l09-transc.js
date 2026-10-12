@@ -73,7 +73,7 @@ LESSONS.push({
     <p>• Ulterior hibridul se desface, <b>eliberând catena de ARN</b>, iar molec. de ADN <b>se reface</b>.</p>
     <p>• După acest model se sintetizează <b>mai multe tipuri de ARN</b> — <b>toate tipurile de ARN din celulă</b> (ARNm, ARNt, ARNr).</p>`)}
   <p><b>Imaginează-ți</b> că ADN-ul e o <b>carte de bucătărie</b> care nu iese din bibliotecă: când ai nevoie de o rețetă, o <b>fotocopiezi</b> — copia este <b>ARN-ul</b>. ARN-polimeraza este <b>fotocopiatorul</b>: deschide cartea (taie legăturile de H), copiază <b>o singură pagină</b> (o catenă — „catena sens”) după regula complementarității, iar apoi cartea se închide la loc (ADN-ul se reface).</p>
-  <div class="callout tip"><b>Atenție:</b> în ARN, adenina din ADN nu se leagă cu timina, ci cu <b>uracilul</b>. Regula: <b>A→U</b>, <b>T→A</b>, <b>C→G</b>, <b>G→C</b> (de pe catena sens se obține ARN-ul).</div>
+  <div class="callout tip"><b>Atenție:</b> în ARN, adenina din ADN nu se leagă cu timina, ci cu <b>uracilul</b>. Regula: <b>A→U</b>, <b>T→A</b>, <b>C→G</b>, <b>G→C</b> (de pe catena sens se obține ARN-ul). În hibrid, catena de ADN și cea de ARN se țin prin <b>legături de hidrogen</b> între bazele complementare (A=U, T=A, C≡G, G≡C), ca între cele două catene ale ADN.</div>
   <label class="chip" style="margin-bottom:8px"><input type="checkbox" id="tLab" checked> arată etichetele</label>
   <div id="tPlayer"></div>
   <div class="kv" style="margin-top:10px"><span>🧬 ARN-polimeraza</span><span>hibrid molecular ADN–ARN</span><span>catenă ADN (liberă)</span><span>molecula de ADN refăcută („ADN original”)</span><span>molecula de ARN</span></div>

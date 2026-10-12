@@ -1,6 +1,6 @@
 'use strict';
 /* ===== Navigare + pornire ===== */
-const TOOLS = [['flash','cards','Flashcards','#0ea5e9'],['match','match','Potrivește','#14b8a6'],['quiz','quiz','Quiz','#f59e0b'],['foaie','sheet','Foaia rezumat','#ef4444'],['acoperire','book','Acoperire: tot ce trebuie să știi','#8b5cf6']];
+const TOOLS = [['flash','cards','Flashcards','#0ea5e9'],['match','match','Potrivește','#14b8a6'],['quiz','quiz','Quiz','#f59e0b'],['teste','flame','Teste grele','#ef4444'],['foaie','sheet','Foaia rezumat','#ef4444'],['acoperire','book','Acoperire: tot ce trebuie să știi','#8b5cf6']];
 
 function buildNav(){
   const cur = (location.hash.replace(/^#\/?/,'') || 'home').split('/').slice(0,2).join('/');
@@ -12,7 +12,7 @@ function buildNav(){
     <div class="nav-h">Exersează</div>
     ${TOOLS.map(t=>item('#/'+t[0],t[1],t[2],null,t[3])).join('')}
     <div class="side-foot"><button class="btn ghost sm" id="resetAll">Șterge progresul</button></div>`;
-  $('#resetAll').onclick=()=>{ if(confirm('Sigur ștergi tot progresul (XP, lecții terminate, greșeli)?')){ ['xp','done','stats','wrong','known'].forEach(k=>store.set(k,k==='xp'?0:k==='stats'?{right:0,total:0}:k==='done'?{}:[])); renderXP(); buildNav(); route(); toast('Progres șters.'); } };
+  $('#resetAll').onclick=()=>{ if(confirm('Sigur ștergi tot progresul (XP, lecții terminate, greșeli)?')){ ['xp','done','stats','wrong','known','hardRes','hardHist'].forEach(k=>store.set(k,k==='xp'?0:k==='stats'?{right:0,total:0}:(k==='done'||k==='hardRes')?{}:[])); renderXP(); buildNav(); route(); toast('Progres șters.'); } };
 }
 
 function renderLesson(l, main){
@@ -23,12 +23,14 @@ function renderLesson(l, main){
       <div class="lh-meta"><span>Lecția ${idx+1} din ${LESSONS.length}</span><span>⏱ ≈ ${l.mins} min</span></div></header>
     ${l.html()}
     <section class="card mq" id="mq"></section>
+    <section class="card hq-lesson"><div class="row" style="justify-content:space-between;gap:12px"><div><h3 style="margin:0">🔥 Știi cu adevărat capitolul ăsta?</h3><p class="small muted" style="margin:4px 0 0">Testul greu al lecției: întrebări cu capcane, fără calcule (${HARD.filter(q=>q.topic===l.topic).length} în total).</p></div><a class="btn" id="hardGo" href="#/teste">Testul greu →</a></div></section>
     <div class="lesson-foot">
       <div class="row">${prv?`<a class="btn ghost" href="#/l/${prv.id}">← ${prv.title}</a>`:''}</div>
       <div class="row"><button class="btn ${isDone(l.id)?'ghost':'ok'}" id="doneBtn">${isDone(l.id)?'✓ Marcată ca învățată':'✅ Am învățat lecția'}</button>${nxt?`<a class="btn" href="#/l/${nxt.id}">${nxt.title} →</a>`:`<a class="btn" href="#/quiz">Mergi la Quiz →</a>`}</div>
     </div></article>`;
   l.init(main);
   miniQuiz($('#mq',main), l.topic, 3);
+  $('#hardGo',main).onclick=()=>store.set('hardGo',l.topic);
   $('#doneBtn',main).onclick=e=>{ const v=!isDone(l.id); setDone(l.id,v); e.target.className='btn '+(v?'ghost':'ok'); e.target.textContent=v?'✓ Marcată ca învățată':'✅ Am învățat lecția'; if(v){ addXP(20); confetti(20); toast('Bravo! +20 XP 🎉'); } buildNav(); };
 }
 
