@@ -3,14 +3,12 @@
 
 /* ---------- ilustrații de viruși ---------- */
 function phageSVG(){
-  const rna=`<path d="M52 36 q8 -10 16 0 t16 0 M50 50 q8 -10 16 0 t16 0 M52 64 q8 -10 16 0 t16 0 M56 78 q8 -10 16 0 t12 0" fill="none" stroke="#14b8a6" stroke-width="3.4" stroke-linecap="round"/>`;
+  const rna=`<path d="M46 62 q8 -10 16 0 t16 0 M44 78 q8 -10 16 0 t16 0 M46 94 q8 -10 16 0 t16 0 M50 110 q8 -10 16 0 t12 0" fill="none" stroke="#14b8a6" stroke-width="3.4" stroke-linecap="round"/>`;
   let s=`<defs><linearGradient id="gHeadP" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c7d2fe"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>`;
-  [[30,200],[48,196],[62,200],[78,200],[92,196],[110,200]].forEach(([x,y],i)=>{ s+=`<polyline points="${[48,56,70,84,92][i%5]||70},160 ${x},${y-12} ${x+(i%2?8:-8)},${y}" fill="none" stroke="#7c8aa5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`; });
-  s+=`<polygon points="48,150 92,150 84,162 56,162" fill="#94a3b8" stroke="#475569" stroke-width="2"/>`;
-  s+=`<rect x="60" y="106" width="20" height="46" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>`+[114,122,130,138,146].map(y=>`<line x1="60" y1="${y}" x2="80" y2="${y}" stroke="#64748b" stroke-width="1.6"/>`).join('');
-  s+=`<rect x="64" y="96" width="12" height="12" rx="3" fill="#94a3b8"/>`;
-  s+=`<polygon points="70,8 108,30 108,72 70,96 32,72 32,30" fill="url(#gHeadP)" stroke="#3730a3" stroke-width="2.4" stroke-linejoin="round"/><g stroke="#fff" stroke-opacity=".35" stroke-width="1.6"><line x1="70" y1="8" x2="70" y2="96"/><line x1="32" y1="30" x2="108" y2="72"/><line x1="32" y1="72" x2="108" y2="30"/></g>`+rna;
-  return `<svg viewBox="0 0 140 215" width="100%" style="max-height:170px">${s}</svg>`;
+  s+=`<polygon points="70,22 114,46 114,98 70,122 26,98 26,46" fill="url(#gHeadP)" stroke="#3730a3" stroke-width="2.4" stroke-linejoin="round"/>`;
+  s+=`<g stroke="#fff" stroke-opacity=".35" stroke-width="1.6"><line x1="70" y1="22" x2="70" y2="122"/><line x1="26" y1="46" x2="114" y2="98"/><line x1="26" y1="98" x2="114" y2="46"/></g>`+rna;
+  s+=`<circle cx="70" cy="136" r="8" fill="#94a3b8" stroke="#475569" stroke-width="2"/>`;
+  return `<svg viewBox="0 0 140 160" width="100%" style="max-height:170px">${s}</svg>`;
 }
 function vmtSVG(){
   let s=`<defs><linearGradient id="gRod" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bbf7d0"/><stop offset=".6" stop-color="#4ade80"/><stop offset="1" stop-color="#15803d"/></linearGradient></defs>`;
@@ -48,7 +46,7 @@ function ribosomeFigure(){
 }
 
 /* ---------- ARNt: frunza de trifoi ---------- */
-const TR_PAIRS={acc:[['G','C'],['C','G'],['G','U'],['A','U']],dst:[['G','C'],['C','G'],['U','A']],tst:[['G','C'],['A','U'],['C','G']],ast:[['C','G'],['U','A'],['G','C'],['A','U'],['C','G']]};
+const TR_PAIRS={acc:[['G','C'],['C','G'],['U','A'],['A','U']],dst:[['G','C'],['C','G'],['U','A']],tst:[['G','C'],['A','U'],['C','G']],ast:[['C','G'],['U','A'],['G','C'],['A','U'],['C','G']]};
 function trnaGeometry(){
   const bases=[], pairs=[], D2R=Math.PI/180;
   const add=(x,y,l,part)=>{ const b={x,y,l,part,i:bases.length}; bases.push(b); return b; };

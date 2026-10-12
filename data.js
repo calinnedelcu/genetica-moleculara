@@ -47,9 +47,9 @@ Q('acizi',"Care dintre următoarele este o nucleotidă de ADN?","CDP",["URP","AR
 
 /* --- catena --- */
 Q('catena',"Nucleotidele dintr-o catenă se leagă prin legături…","fosfodiesterice",["de hidrogen","peptidice","ionice"],"Legături fosfodiesterice, prin intermediul radicalului fosfat.");
-Q('catena',"Legătura fosfodiesterică unește…","C5' al unei pentoze cu C3' al pentozei vecine, prin fosfat",["C1' cu C1' prin baza azotată","două baze azotate prin hidrogen","C3' cu C3' direct"],"Fosfatul face puntea între C5' al unei pentoze și C3' al celei vecine.");
-Q('catena',"Baza azotată se leagă de pentoză la carbonul…","C1'",["C3'","C5'","C4'"],"Baza este la C1'; fosfatul la C5'.");
-Q('catena',"Radicalul fosfat al unei nucleotide se leagă de carbonul…","C5'",["C1'","C2'","C4'"],"Fosfatul se leagă la C5'.");
+Q('catena',"Legătura fosfodiesterică unește…","C5′ al unei pentoze cu C3′ al pentozei vecine, prin fosfat",["C1′ cu C1′ prin baza azotată","două baze azotate prin hidrogen","C3′ cu C3′ direct"],"Fosfatul face puntea între C5′ al unei pentoze și C3′ al celei vecine.");
+Q('catena',"Baza azotată se leagă de pentoză la carbonul…","C1′",["C3′","C5′","C4′"],"Baza este la C1′; fosfatul la C5′.");
+Q('catena',"Radicalul fosfat al unei nucleotide se leagă de carbonul…","C5′",["C1′","C2′","C4′"],"Fosfatul se leagă la C5′.");
 TF('catena',"În mod obișnuit ADN este bicatenar, iar ARN monocatenar.",true,"ADN – bicatenar (de obicei); ARN – monocatenar (de obicei).");
 
 /* --- complementaritate --- */
@@ -68,7 +68,7 @@ Q('compl',"Un fragment de ADN are 3 perechi A=T și 2 perechi C≡G. Câte legă
 Q('adn',"Cele două catene ale ADN sunt…","răsucite helicoidal în jurul unui ax",["drepte și paralele","legate prin legături fosfodiesterice","unite doar la capete"],"ADN = moleculă bicatenară, răsucită helicoidal în jurul unui ax.");
 Q('adn',"Ce leagă cele 2 catene ale ADN între ele?","Legături de hidrogen",["Legături fosfodiesterice","Legături peptidice","Legături ionice"],"Structura II = 2 catene unite prin legături de H.");
 Q('adn',"Structura I a ADN este dată de…","o catenă cu nucleotide legate fosfodiesteric",["cele 2 catene legate prin H","ribozomi","pliurile ARN"],"Structura I (primară) = monocatenară; structura II (secundară) = bicatenară.");
-Q('adn',"Cele două catene ale ADN sunt…","antiparalele",["paralele","identice","necomplementare"],"Pe o catenă sensul de ansamblare e C3'→C5', pe cealaltă C5'→C3'.");
+Q('adn',"Din punct de vedere al sensului de ansamblare a nucleotidelor, cele două catene ale ADN sunt…","antiparalele",["paralele","identice","necomplementare"],"Pe o catenă sensul de ansamblare e C3′→C5′, pe cealaltă C5′→C3′.");
 Q('adn',"Nucleotidele de pe cele 2 catene se leagă pe principiul…","complementarității bazelor azotate",["mărimii nucleotidelor","încărcării electrice a fosfatului","numărului de carboni"],"A=T, C≡G.");
 
 /* --- denaturare --- */
@@ -134,7 +134,7 @@ TF('denat',"Cu cât procentul de renaturare dintre ADN-ul a două specii este ma
 Q('repl',"Ciclul celular este alcătuit din…","interfază și diviziune celulară",["profază și metafază","replicare și transcripție","G1 și G2"],"Ciclul celular = interfază + diviziune celulară (replicarea are loc în etapa S a interfazei).");
 Q('repl',"Rolul catenei vechi în fiecare moleculă-fiică este de…","matriță (model)",["enzimă","nucleotidă liberă","ribozom"],"Catena veche a avut rol de model sau de matriță pentru sinteza celei noi.");
 Q('transc',"Catena de ADN din care se copiază ARN-ul se numește…","catena sens",["catena antiparalelă","catena fiică","catena liberă"],"Catena copiată se numește „catena sens” (s.n. = se numește).");
-Q('transc',"După modelul transcripției se sintetizează…","toate tipurile de ARN",["doar ARNm","doar proteine","doar ADN"],"ARNm, ARNt, ARNr — toate tipurile de ARN se sintetizează după acest model.");
+Q('transc',"După modelul transcripției se sintetizează…","toate tipurile de ARN din celulă (ARNm, ARNt, ARNr)",["doar ARNm","doar proteine","doar ADN"],"ARNm, ARNt, ARNr — toate ARN-urile din celulă se sintetizează după modelul transcripției (ARN-ul viral al unor virusuri provine din alt proces).");
 TF('transc',"În transcripție se copiază ambele catene ale ADN.",false,"Doar o singură catenă din molecula de ADN.");
 Q('transc',"Ce rămâne după transcripție, în afară de moleculă de ARN?","molecula de ADN refăcută",["două molecule noi de ADN","ADN fragmentat","un hibrid ADN–ARN"],"Hibridul se desface, ARN se eliberează, iar molecula de ADN se reface.");
 Q('arn',"Care ARN intră în alcătuirea ribozomilor?","ARNr",["ARNm","ARNt","ARN viral"],"ARN ribozomal.");
@@ -177,15 +177,15 @@ const CARDS = [
  ["Pentoza din ADN","Dezoxiriboza (D).","acizi"],
  ["Pentoza din ARN","Riboza (R).","acizi"],
  ["Nucleotide de ADN","ADP, GDP, CDP, TDP (bază–dezoxiriboză–fosfat).","acizi"],
- ["Nucleotide de ARN","ARP, GRP, CRP, URP (bază–riboză–fosfat).","acizi"],
- ["Legătura fosfodiesterică","Leagă nucleotidele într-o catenă: între C5' al unei pentoze și C3' al pentozei vecine, prin radicalul fosfat.","catena"],
- ["Unde se leagă baza azotată?","La C1' al pentozei.","catena"],
+ ["Nucleotide de ARN","ARP, URP, CRP, GRP (bază–riboză–fosfat).","acizi"],
+ ["Legătura fosfodiesterică","Leagă nucleotidele într-o catenă: între C5′ al unei pentoze și C3′ al pentozei vecine, prin radicalul fosfat.","catena"],
+ ["Unde se leagă baza azotată?","La C1′ al pentozei.","catena"],
  ["Complementaritate în ADN","A = T (2 legături de H); C ≡ G (3 legături de H).","compl"],
  ["Complementaritate în ARN (regiuni bicatenare)","A = U; C ≡ G.","compl"],
  ["Regula purină – pirimidină","O bază purinică se leagă mereu de una pirimidinică.","compl"],
  ["Structura I a ADN","O catenă: nucleotide legate prin legături fosfodiesterice.","adn"],
  ["Structura II a ADN","2 catene legate prin legături de H, răsucite helicoidal în jurul unui ax.","adn"],
- ["Catene antiparalele","Pe una sensul e C3'→C5', pe cealaltă C5'→C3'.","adn"],
+ ["Catene antiparalele","Pe una sensul e C3′→C5′, pe cealaltă C5′→C3′.","adn"],
  ["Denaturarea ADN","Separarea celor 2 catene (încălzire) → 2 molecule monocatenare. Se datorează structurii bicatenare.","denat"],
  ["Renaturarea ADN","Refacerea moleculei bicatenare, prin răcire lentă.","denat"],
  ["Hibridizare om–maimuță / om–șoarece","75% vs 25% → omul e mai înrudit cu maimuța (relații filogenetice).","denat"],
@@ -212,7 +212,7 @@ const CARDS = [
  ["Catena sens","Catena de ADN care se copiază în transcripție (s.n. = se numește „catena sens”).","transc"],
  ["Catenă liberă de ADN","În transcripție: catena de ADN necopiată, deplasată din hibrid (cealaltă jumătate a bulei).","transc"],
  ["Ciclul celular","Interfază + diviziune celulară. Replicarea are loc în etapa S a interfazei.","repl"],
- ["Toate tipurile de ARN","După modelul transcripției se sintetizează toate tipurile de ARN (ARNm, ARNt, ARNr).","transc"],
+ ["Tipurile de ARN din celulă","După modelul transcripției se sintetizează mai multe tipuri de ARN — toate cele din celulă: ARNm, ARNt, ARNr.","transc"],
  ["Viruși cu ARN","Bacteriofagi, VMT (virusul mozaicului tutunului), virusul gripal.","arn"],
  ["Structura primară a ADN","= structura I: o singură catenă, nucleotide legate prin legături fosfodiesterice.","adn"],
  ["Structura secundară a ADN","= structura II: cele 2 catene unite prin legături de H, răsucite helicoidal în jurul unui ax.","adn"],

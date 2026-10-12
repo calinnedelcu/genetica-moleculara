@@ -126,7 +126,7 @@ LESSONS.push({
   </div>
 
   ${secH(4,'Aplicații: cât de înrudite sunt două specii?')}
-  ${nb(`<p><u>Aplicații</u></p><p>Se amestecă <b>monocatenele ADN</b> de la 2 specii diferite<br>↳ în funcție de <b>procentul de renaturare</b> se pot stabili relații de înrudire <b>evolutivă</b> (filogenetică)</p><p>om + maimuță → <b>75%</b> &nbsp;&nbsp;·&nbsp;&nbsp; om + șoarece → <b>~25%</b></p><p>Stabilirea <b>paternității / maternității</b> (asemănare ≈ <b>99%</b>)</p>`)}
+  ${nb(`<p><u>Aplicații</u></p><p>Se amestecă <b>monocatenele ADN</b> de la 2 specii diferite<br>↳ în funcție de <b>procentul de renaturare</b> se pot stabili relații de înrudire <b>evolutivă</b> (filogenetică)</p><p>om + maimuță → <b>75%</b> &nbsp;&nbsp;·&nbsp;&nbsp; om + șoarece → <b>~25%</b></p><p>Stabilirea <b>paternității / maternității</b> (≈ <b>99%</b>)</p>`)}
   <p>Se iau catene de ADN de la două specii, se separă (denaturare) și se amestecă. Unde secvențele <b>se potrivesc</b>, catenele se lipesc (se formează „hibrizi”); unde nu, rămân bucle. <b>Cu cât se lipesc mai multe zone, cu atât speciile sunt mai înrudite.</b> Alege perechea:</p>
   <div class="card">
     <div class="row" style="justify-content:center"><button class="btn" data-sp="maimuta">🧑 om + 🐒 maimuță</button><button class="btn" data-sp="soarece">🧑 om + 🐭 șoarece</button></div>
@@ -137,7 +137,7 @@ LESSONS.push({
   <div class="callout tip"><b>Cum le țin minte:</b> <b>75%</b> = om–maimuță (înrudire mare) · <b>25%</b> = om–șoarece (înrudire mică). <b>Mai mult hibrid = mai înrudite</b> (relații <b>filogenetice</b>).</div>
 
   ${secH(5,'Paternitate / maternitate — jocul detectivului ADN')}
-  <p>Același principiu se folosește pentru <b>stabilirea paternității sau a maternității</b>: ADN-ul copilului „se potrivește” mult mai bine cu al părintelui biologic decât cu al altor persoane. <span class="muted small">(Paternitatea se stabilește cu o asemănare de ≈ 99%; valorile din joc sunt ilustrative.)</span></p>
+  <p>Același principiu se folosește pentru <b>stabilirea paternității sau a maternității</b>: ADN-ul copilului „se potrivește” mult mai bine cu al părintelui biologic decât cu al altor persoane. <span class="muted small">(La un test ADN, probabilitatea de paternitate ajunge la ≈ 99% sau mai mult; valorile din joc sunt ilustrative.)</span></p>
   <div class="card" id="detective"></div>
 
   <div class="callout key"><b>Pe scurt:</b> <b>denaturare</b> = (t°C ↑) legăturile de H se rup → 2 molecule monocatenare · <b>renaturare</b> = răcire lentă → se reface molecula bicatenară · <b>aplicații</b>: relații de înrudire (filogenie) și paternitate/maternitate.</div>`,
@@ -188,8 +188,8 @@ LESSONS.push({
       dt.innerHTML=`<p style="margin-top:0"><b>Cazul:</b> cine este tatăl copilului? Compară ADN-ul copilului (👶) cu al celor 3 candidați.</p>
         <div class="grid3">${[0,1,2].map(i=>`<div class="card center" style="margin:0"><div style="font-size:2rem">${['👨🏻','👨🏽','👨🏿'][i]}</div><b>Candidat ${'ABC'[i]}</b><div class="bar" style="margin:8px 0"><i data-bar="${i}" style="width:0%"></i></div><div class="small" data-v="${i}">?</div><button class="btn ghost sm" data-pick="${i}" style="margin-top:8px">Acesta e tatăl</button></div>`).join('')}</div>
         <div class="row" style="margin-top:12px;justify-content:center"><button class="btn" id="dCmp">🧪 Compară ADN-ul</button></div><div id="dOut"></div>`;
-      $('#dCmp',dt).onclick=async()=>{ if(revealed) return; revealed=true; await tween(1800,p=>{ vals.forEach((v,i)=>{ $(`[data-bar="${i}"]`,dt).style.width=(v*p)+'%'; $(`[data-v="${i}"]`,dt).textContent=Math.round(v*p)+'% renaturare'; }); },dt,eio); };
-      $$('[data-pick]',dt).forEach(b=>b.onclick=()=>{ if(!revealed){ toast('Mai întâi apasă „Compară ADN-ul” 🧪'); return; } const ok=+b.dataset.pick===father; $('#dOut',dt).innerHTML=`<div class="res ${ok?'ok':'bad'}" style="margin-top:12px">${ok?'✅ Corect!':'❌ Nu chiar.'} Tatăl este <b>candidatul ${'ABC'[father]}</b>: ADN-ul lui se potrivește cel mai bine (${vals[father]}% renaturare). <button class="btn sm ghost" id="dNew" style="margin-left:8px">Alt caz</button></div>`; if(ok){ addXP(4); confetti(8); } $('#dNew',dt).onclick=detective; });
+      $('#dCmp',dt).onclick=async()=>{ if(revealed) return; revealed=true; await tween(1800,p=>{ vals.forEach((v,i)=>{ $(`[data-bar="${i}"]`,dt).style.width=(v*p)+'%'; $(`[data-v="${i}"]`,dt).textContent=Math.round(v*p)+'% potrivire'; }); },dt,eio); };
+      $$('[data-pick]',dt).forEach(b=>b.onclick=()=>{ if(!revealed){ toast('Mai întâi apasă „Compară ADN-ul” 🧪'); return; } const ok=+b.dataset.pick===father; $('#dOut',dt).innerHTML=`<div class="res ${ok?'ok':'bad'}" style="margin-top:12px">${ok?'✅ Corect!':'❌ Nu chiar.'} Tatăl este <b>candidatul ${'ABC'[father]}</b>: ADN-ul lui se potrivește cel mai bine (${vals[father]}% potrivire). <button class="btn sm ghost" id="dNew" style="margin-left:8px">Alt caz</button></div>`; if(ok){ addXP(4); confetti(8); } $('#dNew',dt).onclick=detective; });
     }
     detective();
   }

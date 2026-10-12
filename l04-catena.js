@@ -25,7 +25,7 @@ function helixVsRna(t){
   s+=ribbon(pts,'#14b8a6',7);
   const seqR=['A','U','G','C','C','U','A','G','U','C','G','A'];
   seqR.forEach((b,i)=>{ const y=y0+4+i*19.5, x=rx+26*Math.sin((y-y0)/38+t*1.1)+8*Math.sin((y-y0)/17-t*1.6); s+=`<line x1="${f1(x)}" y1="${f1(y)}" x2="${f1(x+14)}" y2="${f1(y)}" stroke="#5b6b86" stroke-width="2.4"/>`+ball(x+24,y,b,9.5); });
-  s+=`<circle cx="${rx-30}" cy="30" r="13" fill="#14b8a6"/><text x="${rx-30}" y="35" text-anchor="middle" class="t-w">1</text>`;
+  s+=``;
   s+=`<text class="t-lg" x="${rx}" y="296" text-anchor="middle" style="fill:#14b8a6">ARN</text><text class="t-sm" x="${rx}" y="314" text-anchor="middle">monocatenar (de obicei 99%)</text>`;
   return s;
 }
@@ -101,7 +101,7 @@ LESSONS.push({
 
   ${secH(3,'Legătura fosfodiesterică — cum se țin nucleotidele de mână')}
   ${nb(`<p>Într-o catenă:<br>– nucleotidele se atașează prin <b>legături fosfodiesterice</b> – între <b>C<sub>5′</sub></b> al unei pentoze și <b>C<sub>3′</sub></b> al pentozei următoare, prin intermediul <b>radicalului fosfat</b> <span class="circ">P</span></p>`)}
-  <p>Iată legătura desenată: două nucleotide una sub alta. Fosfatul (P) face „puntea” între <b>C3′</b> al primei pentoze și <b>C5′</b> a celei următoare. Apasă pe eticheta aurie ca să evidențiezi legătura.</p>
+  <p>Iată legătura desenată: două nucleotide una sub alta. Fosfatul (P) face „puntea” între <b>C3′</b> al primei pentoze și <b>C5′</b> al celei următoare. Apasă pe eticheta aurie ca să evidențiezi legătura.</p>
   <div class="stage pad hs"><svg id="pdSvg" viewBox="0 0 600 470" style="max-width:640px;margin:auto"></svg></div>
   <div class="grid3" style="margin-top:14px">
     <div>

@@ -118,7 +118,7 @@ LESSONS.push({
   html:()=>`
   ${secH(1,'Ce este replicarea și când are loc')}
   ${nb(`<p>2) <u>Replicare</u> = <b>autocopierea</b></p><p>molecula de ADN este <b>singura moleculă care se autocopiază</b></p><p>• autocopierea se realizează în <b>interfaza</b> ciclului celular, în <b>etapa S</b> (sinteză)</p><p>Ciclul celular { <b>interfaza</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>diviziunea celulară</b></p>`)}
-  <p><b>Replicare = autocopiere</b>: o moleculă de ADN produce <b>două molecule identice</b> cu ea. Se întâmplă înainte ca celula să se dividă, ca ambele celule-fiice să primească ADN complet. Celula parcurge un <b>ciclu</b> format din <b>interfază</b> (între diviziuni — aici stă „etapa S”, de <b>s</b>inteză) și <b>diviziunea celulară</b>. Urmărește ciclul:</p>
+  <p><b>Replicare = autocopiere</b>: o moleculă de ADN produce <b>două molecule identice</b> cu ea. Se întâmplă înainte ca celula să se dividă, ca ambele celule-fiice să primească ADN complet. Celula parcurge un <b>ciclu</b> format din <b>interfază</b> (între diviziuni — aici stă „etapa S”, de <b>s</b>inteză) și <b>diviziunea celulară</b>. Urmărește ciclul (în desen, celula are o singură moleculă de ADN — model simplificat):</p>
   <div id="cyPlayer"></div>
   <div class="callout key"><b>De ținut minte:</b> ADN-ul este <b>singura moleculă care se autocopiază</b> · se replică în <b>interfază</b>, în <b>etapa S (sinteză)</b> · apoi urmează <b>diviziunea celulară</b>.</div>
 
@@ -139,12 +139,13 @@ LESSONS.push({
   <p>Animația de mai jos urmărește exact acești pași. <b>Poți</b> să tragi de cursor, să alegi un pas din listă sau să încetinești la 0,5× ca să vezi fiecare detaliu. Atenție la <b>foarfeca</b> de pe enzimă: ea „taie” legăturile de hidrogen!</p>
   <label class="chip" style="margin-bottom:8px"><input type="checkbox" id="rLab" checked> arată etichetele</label>
   <div id="rPlayer"></div>
-  <div class="callout tip"><b>Imaginează-ți o fermoar:</b> ADN-polimeraza este cursorul care <b>deschide</b> fermoarul (taie legăturile de H), iar în urma lui se „coase” câte o catenă nouă pe fiecare jumătate, aranjând nucleotidele după regula A–T, C–G.</div>
+  <div class="callout tip"><b>Imaginează-ți un fermoar:</b> ADN-polimeraza este cursorul care <b>deschide</b> fermoarul (taie legăturile de H), iar în urma lui se „coase” câte o catenă nouă pe fiecare jumătate, aranjând nucleotidele după regula A–T, C–G.</div>
+  <details><summary>🔬 Bonus: ce se știe mai exact despre enzime</summary><p>La acest nivel se spune că <b>ADN-polimeraza</b> taie pas cu pas legăturile de H. În biologia mai avansată, <b>desfacerea helixului</b> o face enzima <b>helicază</b>, iar <b>ADN-polimeraza</b> este cea care <b>adaugă nucleotidele</b> catenei noi, pe baza complementarității. Pentru test folosește formularea din lecție.</p></details>
   <div class="callout key"><b>Rezultatul:</b> 2 molecule de ADN <b>identice</b>, fiecare cu <b>o catenă veche + o catenă nouă</b> → <b>semiconservativ</b>. Acest proces explică <b>menținerea aceleiași informații ereditare în toate celulele unui organism</b>.</div>
 
   ${secH(4,'Încearcă tu: replică o secvență')}
   <p>Scrie o secvență de ADN (doar A, T, C, G) — vezi ce rezultă din replicare.</p>
-  <div class="card"><div class="row"><input type="text" id="rIn" maxlength="10" value="ACTCGA" autocomplete="off"><button class="btn ghost sm" id="rRnd">🎲 aleator</button></div><div id="rOut" style="margin-top:12px"></div></div>
+  <div class="card"><div class="row"><input type="text" id="rIn" maxlength="10" value="ACTC" autocomplete="off"><button class="btn ghost sm" id="rRnd">🎲 aleator</button></div><div id="rOut" style="margin-top:12px"></div></div>
   <div class="card" id="rOrder"></div>`,
   init(root){
     scenePlayer($('#cyPlayer',root),{dur:16,vb:'0 0 520 470',label:'Ciclul celular și etapa S',render:cycleScene,intro:'Apasă ▶: indicatorul alb parcurge ciclul celular.',

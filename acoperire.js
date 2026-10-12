@@ -44,7 +44,7 @@ const COVER=[
   ['Răcire lentă ⇒ renaturare (se reface molecula bicatenară) · răcire bruscă ⇒ rămân 2 molecule monocatenare',3],
   ['Aplicații: monocatene de ADN de la 2 specii ⇒ procent de renaturare ⇒ relații de înrudire evolutivă (filogenetică)',4],
   ['om + maimuță → 75% · om + șoarece → ~25%',4],
-  ['Stabilirea paternității / maternității (asemănare ≈ 99%)',5]]},
+  ['Stabilirea paternității / maternității (≈ 99%)',5]]},
  {l:'repl',items:[
   ['Replicare = autocopiere; molecula de ADN este singura moleculă care se autocopiază',1],
   ['Se realizează în interfaza ciclului celular, în etapa S (sinteză); ciclul celular = interfază + diviziune celulară',1],
@@ -63,7 +63,7 @@ const COVER=[
   ['Nucleotidele libere din citoplasmă se atașează pe baza complementarității doar de o catenă din ADN (catena sens)',2],
   ['Intermediar se formează un hibrid molecular ADN–ARN și o catenă liberă de ADN',2],
   ['Hibridul se desface: se eliberează catena de ARN, iar molecula de ADN se reface („ADN original”)',2],
-  ['După acest model se sintetizează toate tipurile de ARN',5]]},
+  ['După acest model se sintetizează mai multe tipuri de ARN — toate tipurile de ARN din celulă (ARNm, ARNt, ARNr)',5]]},
  {l:'arn',items:[
   ['Tipuri de ARN: viral și celular',1],
   ['ARN viral = materialul genetic al virusurilor (bacteriofagi, VMT – virusul mozaicului tutunului, virusul gripal)',1],

@@ -79,10 +79,8 @@ LESSONS.push({
 
   ${secH(3,'Bazele azotate')}
   ${nb(`<p><u>Bazele azotate</u></p>
-    <p>{ <b>purinice</b> → adenina <span class="circ">A</span>, guanina <span class="circ">G</span> &nbsp;<span class="e">} prezent în ADN și ARN</span><br>
-    &nbsp;&nbsp;<b>pirimidinice</b> → citozina <span class="circ">C</span> &nbsp;<span class="e">}</span><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timina <span class="circ">T</span> – <b>doar ADN</b><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uracil <span class="circ">U</span> – <b>doar ARN</b></p>`)}
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><div><b>purinice</b> → adenina <span class="circ">A</span>, guanina <span class="circ">G</span><br><b>pirimidinice</b> → citozina <span class="circ">C</span></div><div style="font-size:3.4rem;line-height:1;color:#b91c1c">}</div><div class="e">prezent în ADN și ARN</div></div>
+    <div style="padding-left:9.6em">timina <span class="circ">T</span> – <b>doar ADN</b><br>uracil <span class="circ">U</span> – <b>doar ARN</b></div>`)}
   <p>Bazele sunt de <b>două feluri</b>, după forma lor: <b>purinice</b> (2 inele unite — mai „mari”) și <b>pirimidinice</b> (un singur inel — mai „mici”). Atinge o bază ca să-i vezi formula:</p>
   <div class="card"><div class="grid3" id="bGal" style="gap:10px"></div><div class="res info" id="bInfo" style="margin-top:12px">👆 Alege o bază.</div></div>
   <div class="grid2">

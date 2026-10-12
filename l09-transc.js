@@ -71,21 +71,23 @@ LESSONS.push({
     <p>• Nucleotidele <b>libere din citoplasmă</b> se atașează pe baza de <b>complementaritate</b> doar de <b>o catenă</b> din molecula de ADN (s.n. <b>catena sens</b>)</p>
     <p>• Intermediar se formează un <b>hibrid molec. ADN–ARN</b> (+ o <b>catenă liberă de ADN</b>)</p>
     <p>• Ulterior hibridul se desface, <b>eliberând catena de ARN</b>, iar molec. de ADN <b>se reface</b>.</p>
-    <p>• După acest model se sintetizează <b>toate tipurile de ARN</b>.</p>`)}
+    <p>• După acest model se sintetizează <b>mai multe tipuri de ARN</b> — <b>toate tipurile de ARN din celulă</b> (ARNm, ARNt, ARNr).</p>`)}
   <p><b>Imaginează-ți</b> că ADN-ul e o <b>carte de bucătărie</b> care nu iese din bibliotecă: când ai nevoie de o rețetă, o <b>fotocopiezi</b> — copia este <b>ARN-ul</b>. ARN-polimeraza este <b>fotocopiatorul</b>: deschide cartea (taie legăturile de H), copiază <b>o singură pagină</b> (o catenă — „catena sens”) după regula complementarității, iar apoi cartea se închide la loc (ADN-ul se reface).</p>
   <div class="callout tip"><b>Atenție:</b> în ARN, adenina din ADN nu se leagă cu timina, ci cu <b>uracilul</b>. Regula: <b>A→U</b>, <b>T→A</b>, <b>C→G</b>, <b>G→C</b> (de pe catena sens se obține ARN-ul).</div>
   <label class="chip" style="margin-bottom:8px"><input type="checkbox" id="tLab" checked> arată etichetele</label>
   <div id="tPlayer"></div>
-  <div class="kv" style="margin-top:10px"><span>🧬 ARN-polimeraza</span><span>hibrid molecular ADN–ARN</span><span>catenă ADN (liberă)</span><span>molecula de ADN refăcută = „ADN original”</span><span>molecula de ARN</span></div>
+  <div class="kv" style="margin-top:10px"><span>🧬 ARN-polimeraza</span><span>hibrid molecular ADN–ARN</span><span>catenă ADN (liberă)</span><span>molecula de ADN refăcută („ADN original”)</span><span>molecula de ARN</span></div>
   <div class="callout warn"><b>Atenție:</b> catena liberă care rămâne este de <b>ADN</b> (jumătatea de ADN care <u>nu</u> a fost copiată). <b>ARN-ul</b> este catena nou sintetizată, eliberată din hibrid.</div>
 
   ${secH(3,'Fii tu ARN-polimeraza')}
   <p>Scrie o secvență de pe <b>catena sens</b> a ADN (doar A, T, C, G). ARN-ul se construiește literă cu literă:</p>
   <div class="card">
-    <div class="row"><input type="text" id="trIn" maxlength="12" value="TACGGATC" autocomplete="off"><button class="btn ghost sm" id="trRnd">🎲 aleator</button><button class="btn sm" id="trGo">▶ Transcrie</button></div>
+    <div class="row"><input type="text" id="trIn" maxlength="12" value="ACTC" autocomplete="off"><button class="btn ghost sm" id="trRnd">🎲 aleator</button><button class="btn sm" id="trGo">▶ Transcrie</button></div>
     <div class="row" style="margin-top:12px;gap:6px"><span class="small muted">Regula:</span>${[['A','U'],['T','A'],['C','G'],['G','C']].map(([a,b])=>`<span class="chip" style="padding:3px 10px">${baseChip(a)} → ${baseChip(b)}</span>`).join('')}</div>
     <div id="trOut" style="margin-top:12px"></div>
   </div>
+
+  <details><summary>🔬 Bonus: o precizare de terminologie</summary><p>În acest capitol, <b>catena sens</b> este catena de ADN <b>care se copiază</b> (pe ea se aranjează nucleotidele ARN). În alte surse, „catena sens” (codificatoare) este cealaltă catenă — cea cu aceeași secvență ca ARNm — iar cea copiată se numește „matriță” sau „antisens”. Pentru test folosește formularea din lecție.</p></details>
 
   ${secH(4,'Replicare vs. transcripție')}
   <div class="card tbl-wrap"><table>

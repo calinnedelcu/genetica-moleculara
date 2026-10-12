@@ -174,7 +174,7 @@ LESSONS.push({
   <div id="trPlayer"></div>
   <div class="callout key"><b>Concluzie:</b> bacteriile RII au primit de la cele SIII moarte <b>ADN</b> și au devenit virulente. Deci <b>ADN-ul este purtătorul informației ereditare</b>. Trecerea ADN-ului dintr-o bacterie în alta, cu schimbarea caracterelor, se numește <b>transformare genetică</b>.</div>
   <div class="grid2">
-    <div class="card"><h3>1928 · Griffith</h3><p class="small">Observă fenomenul: amestecul RII + SIII omorâți le ucide pe șoareci. Nu știa încă <i>ce</i> trece de la o bacterie la alta.</p></div>
+    <div class="card"><h3>1928 · Griffith</h3><p class="small">Observă fenomenul: amestecul RII + SIII omorâți îi ucide pe șoareci. Nu știa încă <i>ce</i> trece de la o bacterie la alta.</p></div>
     <div class="card"><h3>1944 · Avery</h3><p class="small">Explică experimentul: <b>molecula de ADN</b> a trecut de la bacteriile moarte la tipul RII ⇒ <b>transformare genetică</b>.</p></div>
   </div></div>`,
   init(root){
